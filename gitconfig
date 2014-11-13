@@ -3,3 +3,5 @@
 	email = richard.poettler@gmail.com
 [push]
 	default = simple
+[color]
+	ui = auto
