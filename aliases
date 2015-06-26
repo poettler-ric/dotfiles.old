@@ -1,0 +1,5 @@
+alias mount.safo="sshfs fedora.safo.at: $HOME/safo.remote/ -o idmap=file,uidfile=$HOME/.safo.uid,gidfile=$HOME/.safo.gid,nomap=ignore"
+alias umount.safo="fusermount -u $HOME/safo.remote/"
+alias sync.safo.local="rsync -avh --progress --delete --delete-delay --delay-updates $HOME/safo.remote/ $HOME/safo.local/"
+alias sync.local.safo="rsync -avh --progress --delete --delete-delay --delay-updates $HOME/safo.local/ $HOME/safo.remote/"
+
