@@ -1,0 +1,5 @@
+function ssh-rekey() {
+    ssh-keygen -R "$1"
+    ssh -o StrictHostKeyChecking=no "$1"
+}
+
