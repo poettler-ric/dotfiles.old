@@ -10,6 +10,8 @@ set textwidth=80
 set formatoptions+=ron
 
 set smartindent
+set expandtab
+"set ci
 
 set smarttab
 set shiftwidth=4
