@@ -5,3 +5,22 @@ function ssh-rekey() {
     ssh -o StrictHostKeyChecking=no "$1"
 }
 
+export readonly NAS=172.16.254.101
+export readonly DESTINATION="$HOME/nas"
+export readonly FOLDERS="Download Public Usb"
+
+function sync.nas.local() {
+    for i in $FOLDERS
+    do
+        echo "syncing $i"
+        lftp -c "open $NAS; mirror -e $i $DESTINATION/$i"
+    done
+}
+
+function sync.local.nas() {
+    for i in $FOLDERS
+    do
+        echo "syncing $i"
+        lftp -c "open $NAS; mirror -e -R $DESTINATION/$i $i"
+    done
+}
