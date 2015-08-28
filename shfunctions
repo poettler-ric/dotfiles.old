@@ -1,3 +1,5 @@
+#!/bin/sh
+
 function ssh-rekey() {
     ssh-keygen -R "$1"
     ssh -o StrictHostKeyChecking=no "$1"
@@ -17,4 +19,24 @@ function lvresize.xfs() {
 
     sudo lvresize -L $size $* $device
     sudo xfs_growfs $device
+}
+
+export readonly NAS=172.16.254.101
+export readonly DESTINATION="$HOME/nas"
+export readonly FOLDERS="Download Public Usb"
+
+function sync.nas.local() {
+    for i in $FOLDERS
+    do
+        echo "syncing $i"
+        lftp -c "open $NAS; mirror -e $i $DESTINATION/$i"
+    done
+}
+
+function sync.local.nas() {
+    for i in $FOLDERS
+    do
+        echo "syncing $i"
+        lftp -c "open $NAS; mirror -e -R $DESTINATION/$i $i"
+    done
 }
