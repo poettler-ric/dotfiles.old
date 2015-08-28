@@ -3,3 +3,18 @@ function ssh-rekey() {
     ssh -o StrictHostKeyChecking=no "$1"
 }
 
+function lvresize.xfs() {
+    if [ $# -lt 2 ]
+    then
+        echo "usage: $0 <size> <device> [args]"
+        return 1
+    fi
+
+    size=$1
+    device=$2
+
+    shift 2
+
+    sudo lvresize -L $size $* $device
+    sudo xfs_growfs $device
+}
