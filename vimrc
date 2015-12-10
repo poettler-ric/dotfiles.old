@@ -4,7 +4,7 @@ set smartcase
 set incsearch
 set hlsearch
 
-set textwidth=80
+set textwidth=79
 " maybe add 2, too
 "set formatoptions+=ronj
 set formatoptions+=ron
