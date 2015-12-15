@@ -17,5 +17,6 @@ set smarttab
 set shiftwidth=4
 
 autocmd BufNewFile,BufRead *.yml setlocal shiftwidth=2
+autocmd BufNewFile,BufRead *.yaml setlocal shiftwidth=2
 autocmd BufNewFile,BufRead Makefile setlocal noexpandtab nosmarttab
 autocmd BufNewFile,BufRead *.mk setlocal noexpandtab nosmarttab
