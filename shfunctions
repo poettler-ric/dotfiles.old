@@ -40,3 +40,7 @@ function sync.local.nas() {
         lftp -c "open $NAS; mirror -e -R $DESTINATION/$i $i"
     done
 }
+
+function rpm.source.download() {
+    rpmspec -P *.spec | awk '/^Source/ && /:\/\// { print "wget -cN", $2 }' | sh
+}
