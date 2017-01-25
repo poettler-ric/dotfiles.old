@@ -21,9 +21,9 @@ function lvresize.xfs() {
     sudo xfs_growfs $device
 }
 
-export readonly NAS=172.16.254.101
+export readonly NAS="qnap"
 export readonly DESTINATION="$HOME/nas"
-export readonly FOLDERS="Download Public Usb"
+export readonly FOLDERS="Public Usb"
 
 function sync.nas.local() {
     for i in $FOLDERS
