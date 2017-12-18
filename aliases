@@ -6,3 +6,9 @@ alias sync.fedora.local="lftp -c \"open e49141-ftp.services.easyname.eu; set ssl
 alias sync.local.fedora="lftp -c \"open e49141-ftp.services.easyname.eu; set ssl:verify-certificate false; mirror -e -R $HOME/fedora.ripo.at fedora.ripo.at\""
 alias kill.torchlight="kill -9 $(ps -A | grep Torchlight2.bin | sed -e 's/^ //' | cut -f 1 -d ' ')"
 alias backup_home='rsync -avzh -h --delete --delete-excluded --exclude=/fedora/ --exclude=/steam/ --exclude=/wineprefix/ --exclude=/.local/share/Steam/ --exclude=/.cache/ --exclude=/tmp/ --exclude=/projects/ --exclude=/games/ --exclude=/youtube/ /home/richi/ rsync://rsync@qnap:/backup_home/'
+
+if [ -n "$(which nvim 2>/dev/null)" ]
+then
+	alias vi=nvim
+	alias vim=nvim
+fi
