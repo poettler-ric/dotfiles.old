@@ -1,4 +1,8 @@
-export EDITOR=vim
+export EDITOR=vi
+if [ -n "$(which nvim 2>/dev/null)" ]
+then
+	export EDITOR=nvim
+fi
 
 if [ -d $HOME/go ]
 then
