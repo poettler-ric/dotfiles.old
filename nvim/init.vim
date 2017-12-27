@@ -1,8 +1,15 @@
 set colorcolumn=80
+set textwidth=80
+
+set formatoptions=tcqjn
 
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
+set smartcase
+set incsearch
+set hlsearch
 
 " handle whitespaces at the end of a line (git friendly)
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -13,7 +20,6 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
-"Plug 'tpope/vim-sensible'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go'
@@ -21,7 +27,13 @@ Plug 'valloric/youcompleteme'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
+Plug 'tpope/vim-unimpaired'
+Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-airline/vim-airline'
+Plug 'chrisbra/csv.vim'
+"Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
