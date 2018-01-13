@@ -50,3 +50,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_sh_shellcheck_args = "-x"
+
+" Tagbar settings
+let g:tagbar_autofocus = 1
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
