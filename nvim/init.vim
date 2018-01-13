@@ -33,6 +33,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'chrisbra/csv.vim'
+Plug 'ludovicchabant/vim-gutentags'
 "Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 
 " List ends here. Plugins become visible to Vim after this call.
