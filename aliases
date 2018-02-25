@@ -12,3 +12,8 @@ then
 	alias vi=nvim
 	alias vim=nvim
 fi
+
+alias mount.matlab="sshfs -o idmap=file,uidfile=${HOME}/.sshfs.matlab.uid,gidfile=${HOME}/.sshfs.matlab.gid matlab:/mnt/dfs/ricpoe/home/ricpoe ${HOME}/matlab"
+alias umount.matlab='fusermount -u ~/matlab'
+
+alias getrpmsources='spectool -g -R'
