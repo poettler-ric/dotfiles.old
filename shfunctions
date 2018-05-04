@@ -44,3 +44,16 @@ function sync.local.nas() {
 function rpm.source.download() {
     rpmspec -P *.spec | awk '/^Source/ && /:\/\// { print "wget -cN", $2 }' | sh
 }
+
+function lskernel() {
+    sudo dnf list installed | grep kernel.x86_64
+}
+
+function rmkernel() {
+    sudo dnf remove \
+        kernel-$1 \
+        kernel-core-$1 \
+        kernel-devel-$1 \
+        kernel-modules-$1 \
+        kernel-modules-extra-$1
+}
