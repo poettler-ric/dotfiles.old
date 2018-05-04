@@ -18,6 +18,9 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+" find character under cursor
+nnoremap <leader>z xP/<C-R>-<CR>
+
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
