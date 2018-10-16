@@ -43,6 +43,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
+Plug 'vimwiki/vimwiki'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
