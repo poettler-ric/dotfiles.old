@@ -2,8 +2,12 @@ alias mount.safo="sshfs fedora.safo.at: $HOME/safo.remote/ -o idmap=file,uidfile
 alias umount.safo="fusermount -u $HOME/safo.remote/"
 alias sync.safo.local="rsync -avh --progress --delete --delete-delay --delay-updates $HOME/safo.remote/ $HOME/safo.local/"
 alias sync.local.safo="rsync -avh --progress --delete --delete-delay --delay-updates $HOME/safo.local/ $HOME/safo.remote/"
+
 alias sync.fedora.local="lftp -c \"open e49141-ftp.services.easyname.eu; set ssl:verify-certificate false; mirror -e fedora.ripo.at $HOME/fedora.ripo.at\""
 alias sync.local.fedora="lftp -c \"open e49141-ftp.services.easyname.eu; set ssl:verify-certificate false; mirror -e -R $HOME/fedora.ripo.at fedora.ripo.at\""
+
+alias sync.local.infobw="lftp -c \"open e49141-ftp.services.easyname.eu; set ssl:verify-certificate false; mirror -e -R $HOME/infobw.ripo.at/public infobw.ripo.at\""
+
 alias kill.torchlight="kill -9 $(ps -A | grep Torchlight2.bin | sed -e 's/^ //' | cut -f 1 -d ' ')"
 alias backup_home='rsync -avzh -h --delete --delete-excluded --exclude=/fedora/ --exclude=/steam/ --exclude=/wineprefix/ --exclude=/.local/share/Steam/ --exclude=/.cache/ --exclude=/tmp/ --exclude=/projects/ --exclude=/games/ --exclude=/youtube/ /home/richi/ rsync://rsync@qnap:/backup_home/'
 
