@@ -1,7 +1,7 @@
 FILES := ${HOME}/.config/nvim/init.vim \
     ${HOME}/.config/nvim/autoload/plug.vim \
     ${HOME}/.gitconfig \
-    ${HOME}/.st/def.h
+    ${HOME}/.st/config.h
 
 all: $(FILES)
 
@@ -17,6 +17,6 @@ ${HOME}/.gitconfig:
 	mkdir -p $(@D)
 	ln -s $(realpath gitconfig) $@
 
-${HOME}/.st/def.h:
+${HOME}/.st/config.h: st/config.h
 	mkdir -p $(@D)
-	ln -s $(realpath st/def.h) $@
+	cp $< $@
