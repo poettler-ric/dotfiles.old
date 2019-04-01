@@ -1,7 +1,8 @@
 FILES := ${HOME}/.config/nvim/init.vim \
     ${HOME}/.config/nvim/autoload/plug.vim \
     ${HOME}/.gitconfig \
-    ${HOME}/.st/config.h
+    ${HOME}/.st/config.h \
+    ${HOME}/.config/vifm/vifmrc
 
 all: $(FILES)
 
@@ -20,3 +21,7 @@ ${HOME}/.gitconfig:
 ${HOME}/.st/config.h: st/config.h
 	mkdir -p $(@D)
 	cp $< $@
+
+${HOME}/.config/vifm/vifmrc:
+	mkdir -p $(@D)
+	ln -s $(realpath vifmrc) $@
