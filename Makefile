@@ -1,8 +1,9 @@
 FILES := ${HOME}/.config/nvim/init.vim \
     ${HOME}/.config/nvim/autoload/plug.vim \
     ${HOME}/.gitconfig \
-    ${HOME}/.st/config.h \
-    ${HOME}/.config/vifm/vifmrc
+    ${HOME}/.config/vifm/vifmrc \
+    ${HOME}/.st/patches/scrollback.diff \
+    ${HOME}/.st/patches/font.diff
 
 all: $(FILES)
 
@@ -18,7 +19,7 @@ ${HOME}/.gitconfig:
 	mkdir -p $(@D)
 	ln -s $(realpath gitconfig) $@
 
-${HOME}/.st/config.h: st/config.h
+${HOME}/.st/patches/%.diff: st/%.patch
 	mkdir -p $(@D)
 	cp $< $@
 
