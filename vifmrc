@@ -457,3 +457,6 @@ nnoremap <f8> :delete<cr>
 " Block particular shortcut
 "
 " nnoremap <left> <nop>
+
+" don't confirm on simple deletes
+set cf=permdelete
