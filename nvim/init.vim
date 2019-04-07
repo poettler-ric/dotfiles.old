@@ -3,6 +3,9 @@ set textwidth=80
 
 set formatoptions=tcqjn
 
+set autoindent
+set smartindent
+set smarttab
 set shiftwidth=4
 set softtabstop=4
 set expandtab
