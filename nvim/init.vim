@@ -80,3 +80,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " ale settings
 " let g:ale_open_list = 1
 " let g:ale_list_window_size = 5
+let g:ale_fixers = {
+            \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+            \ 'python': ['autopep8'],
+            \}
+let g:ale_fix_on_save = 1
