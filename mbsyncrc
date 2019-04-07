@@ -1,0 +1,145 @@
+###############################
+# gmail
+###############################
+
+IMAPAccount gmail
+Host imap.gmail.com
+User richard.poettler@gmail.com
+PassCmd "cat ~/.gmail.secret"
+SSLType IMAPS
+AuthMechs LOGIN
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/Inbox
+
+Channel gmail-inbox
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns "INBOX"
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-all
+Master :gmail-remote:"[Gmail]/All Mail"
+Slave :gmail-local:"All Mail"
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-drafts
+Master :gmail-remote:"[Gmail]/Drafts"
+Slave :gmail-local:"Drafts"
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-important
+Master :gmail-remote:"[Gmail]/Important"
+Slave :gmail-local:"Important"
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-sent
+Master :gmail-remote:"[Gmail]/Sent Mail"
+Slave :gmail-local:"Sent"
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-spam
+Master :gmail-remote:"[Gmail]/Spam"
+Slave :gmail-local:"Spam"
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-starred
+Master :gmail-remote:"[Gmail]/Starred"
+Slave :gmail-local:"Starred"
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-trash
+Master :gmail-remote:"[Gmail]/Trash"
+Slave :gmail-local:"Trash"
+Create Both
+Expunge Both
+SyncState *
+
+Group gmail
+Channel gmail-inbox
+Channel gmail-all
+Channel gmail-drafts
+Channel gmail-important
+Channel gmail-sent
+Channel gmail-spam
+Channel gmail-starred
+Channel gmail-trash
+
+###############################
+# tugraz
+###############################
+
+IMAPAccount tugraz
+Host sbox.tugraz.at
+User ricpoe
+PassCmd "cat ~/.tugraz.secret"
+SSLType IMAPS
+AuthMechs LOGIN
+
+IMAPStore tugraz-remote
+Account tugraz
+
+MaildirStore tugraz-local
+Path ~/.mail/tugraz/
+Inbox ~/.mail/tugraz/Inbox
+
+Channel tugraz-inbox
+Master :tugraz-remote:
+Slave :tugraz-local:
+Patterns "INBOX"
+Create Both
+Expunge Both
+SyncState *
+
+Channel tugraz-drafts
+Master :tugraz-remote:"INBOX/Drafts"
+Slave :tugraz-local:"Drafts"
+Create Both
+Expunge Both
+SyncState *
+
+Channel tugraz-sent
+Master :tugraz-remote:"INBOX/Sent"
+Slave :tugraz-local:"Sent"
+Create Both
+Expunge Both
+SyncState *
+
+Channel tugraz-spam
+Master :tugraz-remote:"INBOX/spam"
+Slave :tugraz-local:"Spam"
+Create Both
+Expunge Both
+SyncState *
+
+Channel tugraz-trash
+Master :tugraz-remote:"INBOX/Trash"
+Slave :tugraz-local:"Trash"
+Create Both
+Expunge Both
+SyncState *
+
+Group tugraz
+Channel tugraz-inbox
+Channel tugraz-drafts
+Channel tugraz-sent
+Channel tugraz-spam
+Channel tugraz-trash

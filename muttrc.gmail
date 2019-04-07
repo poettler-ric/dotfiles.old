@@ -1,0 +1,11 @@
+# folder options
+set mbox_type=Maildir
+set folder=~/.mail/gmail
+set spoolfile=+Inbox
+set trash=+Trash
+set postponed=+Drafts
+# Gmail automatically saves sent mail
+unset record
+
+set from="richard.poettler@gmail.com"
+set sendmail="/usr/bin/msmtp -a gmail"

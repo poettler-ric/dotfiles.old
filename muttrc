@@ -1,0 +1,27 @@
+# https://gist.github.com/miguelmota/9456162
+# https://www.df7cb.de/blog/2010/Using_multiple_IMAP_accounts_with_Mutt.html
+# https://pbrisbin.com/posts/two_accounts_in_mutt/
+
+# general options
+set realname="Richard Poettler"
+set editor=/usr/bin/nvim
+set edit_headers=yes
+set header_cache=~/.mail/cache_mutt
+
+# folder options
+source ~/.muttrc.gmail
+
+#unmailboxes *
+#mailboxes +gmail/Inbox
+
+# viewing options
+auto_view text/html
+
+# layout options
+set sidebar_visible
+set sidebar_width=15
+set sort=threads
+set pager_index_lines=6
+
+# key mappings
+#bind index ^R check-new
