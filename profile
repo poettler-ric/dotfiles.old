@@ -15,7 +15,5 @@ then
     done
 fi
 
-export DOT_SAGENB=$HOME/sync/sage
-
 # python helper library
 export PYTHONPATH=~/pylib
