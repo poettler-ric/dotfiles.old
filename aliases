@@ -1,3 +1,7 @@
+alias d="sudo dnf"
+alias e=vifm
+alias p=pass
+alias s=sudo
 
 alias sync.fedora.local="lftp -c \"open e49141-ftp.services.easyname.eu; set ssl:verify-certificate false; mirror -e fedora.ripo.at $HOME/fedora.ripo.at\""
 alias sync.local.fedora="lftp -c \"open e49141-ftp.services.easyname.eu; set ssl:verify-certificate false; mirror -e -R $HOME/fedora.ripo.at fedora.ripo.at\""
