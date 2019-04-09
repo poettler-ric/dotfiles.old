@@ -1,4 +1,6 @@
-FILES := ${HOME}/.config/nvim/init.vim \
+FILES := \
+    ${HOME}/.bashrc \
+    ${HOME}/.config/nvim/init.vim \
     ${HOME}/.config/nvim/autoload/plug.vim \
     ${HOME}/.gitconfig \
     ${HOME}/.config/vifm/vifmrc \
