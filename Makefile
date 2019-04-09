@@ -14,6 +14,9 @@ FILES := \
 
 all: $(FILES)
 
+clean:
+	rm $(FILES)
+
 ${HOME}/.config/nvim/init.vim:
 	mkdir -p $(@D)
 	ln -s $(realpath nvim/init.vim) $@
