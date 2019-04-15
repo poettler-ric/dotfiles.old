@@ -25,3 +25,8 @@ set pager_index_lines=6
 
 # key mappings
 #bind index ^R check-new
+
+# goobook settings
+set query_command="goobook query %s"
+bind editor <Tab> complete-query
+macro index,pager a "<pipe-message>goobook add<return>" "add the sender address to Google contacts"
