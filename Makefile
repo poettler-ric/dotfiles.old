@@ -4,6 +4,7 @@ FILES := \
     ${HOME}/.config/nvim/autoload/plug.vim \
     ${HOME}/.gitconfig \
     ${HOME}/.config/vifm/vifmrc \
+    ${HOME}/.config/vifm/colors/.git \
     ${HOME}/.msmtprc \
     ${HOME}/.mbsyncrc \
     ${HOME}/.muttrc \
@@ -34,6 +35,11 @@ ${HOME}/.st/patches/%.diff: st/%.patch
 ${HOME}/.config/vifm/vifmrc:
 	mkdir -p $(@D)
 	ln -s $(realpath vifmrc) $@
+
+${HOME}/.config/vifm/colors/.git:
+	rm -rf ${HOME}/.config/vifm/colors
+	git clone https://github.com/vifm/vifm-colors \
+	    ${HOME}/.config/vifm/colors
 
 ${HOME}/.%: %
 	ln -s $(realpath $<) $@
