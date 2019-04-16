@@ -10,6 +10,7 @@ FILES := \
     ${HOME}/.muttrc.gmail \
     ${HOME}/.mailcap \
     ${HOME}/.st/patches/scrollback.diff \
+    ${HOME}/.st/patches/colors.diff \
     ${HOME}/.st/patches/font.diff
 
 all: $(FILES)
@@ -28,6 +29,7 @@ ${HOME}/.config/nvim/autoload/plug.vim:
 ${HOME}/.st/patches/%.diff: st/%.patch
 	mkdir -p $(@D)
 	cp $< $@
+	rm ${HOME}/.st/modified
 
 ${HOME}/.config/vifm/vifmrc:
 	mkdir -p $(@D)
