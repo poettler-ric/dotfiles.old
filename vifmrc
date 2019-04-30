@@ -116,6 +116,22 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 mark b ~/bin/
 mark h ~/
 
+mark m /var/lib/mock/
+mark t /tmp/
+mark w ~/wiki/content/
+mark x ~/Downloads/
+mark y ~/youtube/
+
+mark q ~/qnap/
+mark d ~/qnap/Download/
+mark p ~/qnap/Public/
+mark s ~/qnap/Scans/
+
+mark Q /net/qnap/
+mark D /net/qnap/Download/
+mark P /net/qnap/Public/
+mark S /net/qnap/Scans/
+
 " ------------------------------------------------------------------------------
 
 " :com[mand][!] command_name action
