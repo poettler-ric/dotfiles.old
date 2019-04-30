@@ -19,7 +19,6 @@ set scrolloff=3
 " handle whitespaces at the end of a line (git friendly)
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " find character under cursor
 nnoremap <leader>z xP/<C-R>-<CR>
@@ -65,7 +64,7 @@ call plug#end()
 
 " Tagbar settings
 let g:tagbar_autofocus = 1
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
+nmap <Leader>b :TagbarToggle<CR>
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
