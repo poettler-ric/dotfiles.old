@@ -1,5 +1,5 @@
 alias d="sudo dnf"
-alias e=vifm
+alias e="vifm ."
 alias p=pass
 alias s=sudo
 
