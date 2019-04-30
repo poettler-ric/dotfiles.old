@@ -30,7 +30,7 @@ ${HOME}/.config/nvim/autoload/plug.vim:
 ${HOME}/.st/patches/%.diff: st/%.patch
 	mkdir -p $(@D)
 	cp $< $@
-	rm ${HOME}/.st/modified
+	rm -f ${HOME}/.st/modified
 
 ${HOME}/.config/vifm/vifmrc:
 	mkdir -p $(@D)
