@@ -480,3 +480,5 @@ nnoremap <f8> :delete<cr>
 
 " don't confirm on simple deletes
 set cf=permdelete
+
+noremap ,s :cd %d %d<cr>
