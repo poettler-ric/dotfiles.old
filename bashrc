@@ -43,3 +43,11 @@ fi
 
 # python helper library
 export PYTHONPATH=~/pylib
+
+# history settings
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+HISTSIZE=10000
+HISTFILESIZE=10000
+HISTCONTROL=ignoreboth:erasedups
+HISTIGNORE="ls:history"
