@@ -1,5 +1,6 @@
 FILES := \
     ${HOME}/.bashrc \
+    ${HOME}/.xsession \
     ${HOME}/.config/nvim/init.vim \
     ${HOME}/.config/nvim/autoload/plug.vim \
     ${HOME}/.gitconfig \
@@ -40,6 +41,10 @@ ${HOME}/.config/vifm/colors/.git:
 	rm -rf ${HOME}/.config/vifm/colors
 	git clone https://github.com/vifm/vifm-colors \
 	    ${HOME}/.config/vifm/colors
+
+${HOME}/.xsession:
+	ln -s $(realpath xsession) $@
+	chmod +x $@
 
 ${HOME}/.%: %
 	ln -s $(realpath $<) $@
