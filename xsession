@@ -1,5 +1,10 @@
 #!/usr/bin/bash
 
+random_file() {
+    DIRECTORY="$1"
+    find "$DIRECTORY" -type f | sort -R | tail -n 1
+}
+
 mail_str() {
     COUNT=$(find ~/.mail/gmail/Inbox/new/ -type f -printf . | wc -c)
     if [ "$COUNT" -gt 0 ]; then
@@ -17,6 +22,11 @@ while true; do
     xsetroot -name "$TRIMED"
     sleep 1m
 done &
+
+WALLPAPERS="${HOME}/wp/"
+if [ -d "$WALLPAPERS" ]; then
+    feh --bg-max "$(random_file "$WALLPAPERS")"
+fi
 
 firefox &
 
