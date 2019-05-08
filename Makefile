@@ -4,6 +4,7 @@ FILES := \
     ${HOME}/.config/nvim/init.vim \
     ${HOME}/.config/nvim/autoload/plug.vim \
     ${HOME}/.gitconfig \
+    ${HOME}/.config/dunst/dunstrc \
     ${HOME}/.config/vifm/vifmrc \
     ${HOME}/.config/vifm/colors/.git \
     ${HOME}/.msmtprc \
@@ -45,6 +46,10 @@ ${HOME}/.config/vifm/colors/.git:
 ${HOME}/.xsession:
 	ln -s $(realpath xsession) $@
 	chmod +x $@
+
+${HOME}/.config/dunst/dunstrc:
+	mkdir -p $(@D)
+	ln -s $(realpath dunstrc) $@
 
 ${HOME}/.%: %
 	ln -s $(realpath $<) $@

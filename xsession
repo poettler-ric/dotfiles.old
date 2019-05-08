@@ -28,6 +28,7 @@ if [ -d "$WALLPAPERS" ]; then
     feh --bg-max "$(random_file "$WALLPAPERS")"
 fi
 
+dunst &
 firefox &
 
 exec dwm-start
