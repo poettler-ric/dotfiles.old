@@ -23,6 +23,8 @@ while true; do
     sleep 1m
 done &
 
+xautolock -time 5 -locker slock &
+
 WALLPAPERS="${HOME}/wp/"
 if [ -d "$WALLPAPERS" ]; then
     feh --bg-max "$(random_file "$WALLPAPERS")"
