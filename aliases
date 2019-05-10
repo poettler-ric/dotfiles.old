@@ -1,6 +1,5 @@
 alias d="sudo dnf"
 alias e="vifm ."
-alias p=pass
 alias s=sudo
 alias v="sudo virsh"
 alias python=python3
