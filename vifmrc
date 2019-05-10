@@ -118,6 +118,7 @@ mark h ~/
 
 mark m /var/lib/mock/
 mark t /tmp/
+mark u ~/sync/study/tu-graz/
 mark w ~/wiki/content/
 mark x ~/Downloads/
 mark y ~/youtube/
