@@ -12,6 +12,7 @@ FILES := \
     ${HOME}/.muttrc \
     ${HOME}/.muttrc.gmail \
     ${HOME}/.mailcap \
+    ${HOME}/.dwm/patches/super.diff \
     ${HOME}/.st/patches/scrollback.diff \
     ${HOME}/.st/patches/colors.diff \
     ${HOME}/.st/patches/font.diff
@@ -33,6 +34,11 @@ ${HOME}/.st/patches/%.diff: st/%.patch
 	mkdir -p $(@D)
 	cp $< $@
 	rm -f ${HOME}/.st/modified
+
+${HOME}/.dwm/patches/%.diff: dwm/%.patch
+	mkdir -p $(@D)
+	cp $< $@
+	rm -f ${HOME}/.dwm/modified
 
 ${HOME}/.config/vifm/vifmrc:
 	mkdir -p $(@D)

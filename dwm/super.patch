@@ -1,0 +1,25 @@
+From ff7fd9a1062677f7772adcdfeb29fcf089321491 Mon Sep 17 00:00:00 2001
+From: Richard Poettler <richard.poettler@gmail.com>
+Date: Thu, 23 May 2019 22:42:33 +0200
+Subject: [PATCH] super
+
+---
+ config.def.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/config.def.h b/config.def.h
+index 62dd3cc..cddbf6d 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -43,7 +43,7 @@ static const Layout layouts[] = {
+ };
+ 
+ /* key definitions */
+-#define MODKEY Mod1Mask
++#define MODKEY Mod4Mask
+ #define TAGKEYS(KEY,TAG) \
+ 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+-- 
+2.20.1
+
