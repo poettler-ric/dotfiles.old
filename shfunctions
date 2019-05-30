@@ -37,3 +37,7 @@ function rmkernel() {
         kernel-modules-$1 \
         kernel-modules-extra-$1
 }
+
+mkcd() {
+    mkdir -p "$1" && cd "$1" || exit
+}
