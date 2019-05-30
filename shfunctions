@@ -1,11 +1,11 @@
 #!/bin/sh
 
-function ssh-rekey() {
+ssh_rekey() {
     ssh-keygen -R "$1"
     ssh -o StrictHostKeyChecking=no "$1"
 }
 
-function lvresize.xfs() {
+lvresize_xfs() {
     if [ $# -lt 2 ]
     then
         echo "usage: $0 <size> <device> [args]"
@@ -17,25 +17,21 @@ function lvresize.xfs() {
 
     shift 2
 
-    sudo lvresize -L $size $* $device
-    sudo xfs_growfs $device
+    sudo lvresize -L "$size" "$@" "$device"
+    sudo xfs_growfs "$device"
 }
 
-function rpm.source.download() {
-    rpmspec -P *.spec | awk '/^Source/ && /:\/\// { print "wget -cN", $2 }' | sh
-}
-
-function lskernel() {
+lskernel() {
     sudo dnf list installed | grep kernel.x86_64
 }
 
-function rmkernel() {
+rmkernel() {
     sudo dnf remove \
-        kernel-$1 \
-        kernel-core-$1 \
-        kernel-devel-$1 \
-        kernel-modules-$1 \
-        kernel-modules-extra-$1
+        "kernel-$1" \
+        "kernel-core-$1" \
+        "kernel-devel-$1" \
+        "kernel-modules-$1" \
+        "kernel-modules-extra-$1"
 }
 
 mkcd() {
