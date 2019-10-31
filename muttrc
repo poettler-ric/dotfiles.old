@@ -6,7 +6,7 @@
 set realname="Richard Poettler"
 set editor=/usr/bin/nvim
 set edit_headers=yes
-set header_cache=~/.mail/cache_mutt
+set header_cache=~/mail/cache_mutt
 
 # folder options
 source ~/.muttrc.gmail

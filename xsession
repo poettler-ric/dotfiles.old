@@ -6,7 +6,7 @@ random_file() {
 }
 
 mail_str() {
-    COUNT=$(find ~/.mail/gmail/Inbox/new/ -type f -printf . | wc -c)
+    COUNT=$(find ~/mail/gmail/Inbox/new/ -type f -printf . | wc -c)
     if [ "$COUNT" -gt 0 ]; then
         printf "mails: %d" "$COUNT"
     fi

@@ -14,8 +14,8 @@ IMAPStore gmail-remote
 Account gmail
 
 MaildirStore gmail-local
-Path ~/.mail/gmail/
-Inbox ~/.mail/gmail/Inbox
+Path ~/mail/gmail/
+Inbox ~/mail/gmail/Inbox
 
 Channel gmail-inbox
 Master :gmail-remote:
@@ -99,8 +99,8 @@ IMAPStore tugraz-remote
 Account tugraz
 
 MaildirStore tugraz-local
-Path ~/.mail/tugraz/
-Inbox ~/.mail/tugraz/Inbox
+Path ~/mail/tugraz/
+Inbox ~/mail/tugraz/Inbox
 
 Channel tugraz-inbox
 Master :tugraz-remote:

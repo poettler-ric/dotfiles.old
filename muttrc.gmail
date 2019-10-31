@@ -1,6 +1,6 @@
 # folder options
 set mbox_type=Maildir
-set folder=~/.mail/gmail
+set folder=~/mail/gmail
 set spoolfile=+Inbox
 set trash=+Trash
 set postponed=+Drafts
