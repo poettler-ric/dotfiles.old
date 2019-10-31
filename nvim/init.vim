@@ -1,20 +1,36 @@
+filetype plugin on
+filetype indent on
+
 set colorcolumn=80
 set textwidth=80
 
-set formatoptions=tcqjn
+"set formatoptions=tcqjn
+
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
 
 set autoindent
 set smartindent
-set smarttab
-set shiftwidth=4
-set softtabstop=4
-set expandtab
 
+set ignorecase
 set smartcase
 set incsearch
 set hlsearch
 
+set relativenumber
+"set cursorline
 set scrolloff=3
+
+" Turn on the Wild menu
+set path+=**
+set wildmenu
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+
+"set omnifunc=syntaxcomplete#Complete
 
 " handle whitespaces at the end of a line (git friendly)
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -23,16 +39,15 @@ match ExtraWhitespace /\s\+$/
 " find character under cursor
 nnoremap <leader>z xP/<C-R>-<CR>
 
+" fly through buffers
+nnoremap <leader>s :ls<CR>:b<space>
+
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
-
-" Declare the list of plugins.
-" Plug 'vim-syntastic/syntastic'
-Plug 'ervandew/supertab'
+Plug 'tpope/vim-sensible'
+"Plug 'ervandew/supertab'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
-Plug 'fatih/vim-go'
-Plug 'valloric/youcompleteme'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -41,26 +56,21 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
-Plug 'chrisbra/csv.vim'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
 Plug 'vimwiki/vimwiki'
-
-" List ends here. Plugins become visible to Vim after this call.
+Plug 'thinca/vim-quickrun'
+"Plug 'valloric/youcompleteme', { 'do': './install.py --go-completer --clang-completer' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 call plug#end()
 
 
-" Syntastic (Recommended settings)
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_sh_shellcheck_args = "-x"
+" supertab settings
+"let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Tagbar settings
 let g:tagbar_autofocus = 1
@@ -69,23 +79,33 @@ nmap <Leader>b :TagbarToggle<CR>
 " Nerdtree settings
 nmap <Leader>n :NERDTreeToggle<CR>
 
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" deoplete settings
+"let g:deoplete#enable_at_startup = 1
+"call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " ale settings
-" let g:ale_open_list = 1
-" let g:ale_list_window_size = 5
 let g:ale_fixers = {
             \ '*': ['remove_trailing_lines', 'trim_whitespace'],
             \ 'python': ['autopep8'],
+            \ 'rust': ['rustfmt'],
             \}
 let g:ale_fix_on_save = 1
+let g:ale_rust_cargo_use_clippy = 1
 
+" rust.vim settings
+" TODO: :RustFmt doesn't seem to work
+let g:rustfmt_autosave = 1
+
+" ultisnips settings
+"let g:UltiSnipsExpandTrigger="<c-i>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
+" Filetype settings
 autocmd FileType yaml setlocal shiftwidth=2
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
