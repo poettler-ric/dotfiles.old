@@ -27,7 +27,8 @@ xautolock -time 5 -locker slock &
 
 WALLPAPERS="${HOME}/wp/"
 if [ -d "$WALLPAPERS" ]; then
-    feh --bg-max "$(random_file "$WALLPAPERS")"
+    #feh --bg-max "$(random_file "$WALLPAPERS")"
+    display -window root -backdrop "$(random_file "$WALLPAPERS")"
 fi
 
 dunst &
