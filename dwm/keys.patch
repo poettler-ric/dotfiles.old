@@ -1,0 +1,25 @@
+From 7b221db49c22fbd17daec65c9e9e595145566a96 Mon Sep 17 00:00:00 2001
+From: Richard Poettler <richard.poettler@gmail.com>
+Date: Fri, 31 May 2019 21:06:27 +0200
+Subject: [PATCH] keys
+
+---
+ config.def.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/config.def.h b/config.def.h
+index cddbf6d..07286c8 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -71,7 +71,7 @@ static Key keys[] = {
+ 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+ 	{ MODKEY,                       XK_Return, zoom,           {0} },
+ 	{ MODKEY,                       XK_Tab,    view,           {0} },
+-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
++	{ MODKEY,                       XK_c,      killclient,     {0} },
+ 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+ 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+ 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+-- 
+2.20.1
+

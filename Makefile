@@ -13,6 +13,7 @@ FILES := \
     ${HOME}/.muttrc.gmail \
     ${HOME}/.mailcap \
     ${HOME}/.dwm/patches/super.diff \
+    ${HOME}/.dwm/patches/keys.diff \
     ${HOME}/.st/patches/scrollback.diff \
     ${HOME}/.st/patches/colors.diff \
     ${HOME}/.st/patches/font.diff
