@@ -16,7 +16,10 @@ FILES := \
     ${HOME}/.dwm/patches/keys.diff \
     ${HOME}/.st/patches/scrollback.diff \
     ${HOME}/.st/patches/colors.diff \
-    ${HOME}/.st/patches/font.diff
+    ${HOME}/.st/patches/font.diff \
+    ${HOME}/.doom.d/init.el \
+    ${HOME}/.doom.d/config.el \
+    ${HOME}/.doom.d/packages.el \
 
 all: $(FILES)
 
@@ -60,3 +63,15 @@ ${HOME}/.config/dunst/dunstrc:
 
 ${HOME}/.%: %
 	ln -s $(realpath $<) $@
+
+${HOME}/.doom.d/init.el:
+	mkdir -p $(@D)
+	ln -s $(realpath doom.d/init.el) $@
+
+${HOME}/.doom.d/config.el:
+	mkdir -p $(@D)
+	ln -s $(realpath doom.d/config.el) $@
+
+${HOME}/.doom.d/packages.el:
+	mkdir -p $(@D)
+	ln -s $(realpath doom.d/packages.el) $@
