@@ -122,7 +122,11 @@ done
 # EDITOR SETTINGS
 ############################
 export EDITOR=vi
-if [ -n "$(which nvim 2>/dev/null)" ]; then
+if type vim >/dev/null; then
+	export EDITOR=vim
+	alias vi=vim
+fi
+if type nvim >/dev/null; then
 	export EDITOR=nvim
 	alias vi=nvim
 	alias vim=nvim
