@@ -133,10 +133,18 @@ fi
 ############################
 
 export GOPATH="${HOME}/go"
-export GOROOT="/usr/lib/golang"
 if [ -d "${GOPATH}/bin" ]; then
     export PATH="${GOPATH}/bin:${PATH}"
 fi
+goroots=(
+    /usr/lib/golang
+    /usr/lib/go
+)
+for root ($goroots); do
+    if [ -d $root ]; then
+        export GOROOT=$root
+    fi
+done
 
 ############################
 # ALIASES AND FUNCTIONS
