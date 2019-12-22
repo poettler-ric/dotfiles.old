@@ -119,6 +119,14 @@ for addon ($addons); do
 done
 
 ############################
+# SETUP ENVIRONMENT
+############################
+if [[ ! "$PATH" =~ "${HOME}/bin" ]]; then
+   export PATH="${HOME}/bin:${PATH}"
+fi
+
+
+############################
 # EDITOR SETTINGS
 ############################
 export EDITOR=vi
