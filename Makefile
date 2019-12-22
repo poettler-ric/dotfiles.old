@@ -1,5 +1,6 @@
 FILES := \
 	${HOME}/.bashrc \
+	${HOME}/.zshrc \
 	${HOME}/.xsession \
 	${HOME}/.config/nvim/init.vim \
 	${HOME}/.config/nvim/autoload/plug.vim \
