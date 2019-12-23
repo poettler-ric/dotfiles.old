@@ -49,24 +49,24 @@ Plug 'tpope/vim-sensible'
 "Plug 'ervandew/supertab'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-unimpaired'
-Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'vim-airline/vim-airline'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'lervag/vimtex'
-Plug 'vimwiki/vimwiki'
-Plug 'thinca/vim-quickrun'
+"Plug 'tpope/vim-fugitive'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'godlygeek/tabular'
+"Plug 'tpope/vim-unimpaired'
+"Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'vim-airline/vim-airline'
+"Plug 'ludovicchabant/vim-gutentags'
+"Plug 'lervag/vimtex'
+"Plug 'vimwiki/vimwiki'
+"Plug 'thinca/vim-quickrun'
 "Plug 'valloric/youcompleteme', { 'do': './install.py --go-completer --clang-completer' }
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+"Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+"Plug 'rust-lang/rust.vim'
+"Plug 'racer-rust/vim-racer'
 call plug#end()
 
 
