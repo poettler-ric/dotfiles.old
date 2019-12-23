@@ -7,5 +7,7 @@ set postponed=+Drafts
 # Gmail automatically saves sent mail
 unset record
 
+mailboxes =Inbox
+
 set from="richard.poettler@gmail.com"
 set sendmail="/usr/bin/msmtp -a gmail"
